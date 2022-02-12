@@ -1,4 +1,4 @@
-import venom from "venom-bot";
+import { create, Whatsapp} from "venom-bot";
 
 interface IMessage {
     isGroupMsg: boolean;
@@ -6,21 +6,12 @@ interface IMessage {
     from: string;
 }
 
-venom
-  .create({
-    session: 'session-name', //name of session
-    multidevice: false // for version not multidevice use false.(default: true)
-  })
-  .then((client: any) => start(client))
-  .catch((erro: Error) => {
-    console.log(erro);
-  });
+export function startVenom(client: Whatsapp) {
 
-function start(client: any) {
   client.onMessage((message: IMessage ) => {
-    if (message.body === 'Hi' && message.isGroupMsg === false) {
-      client
-        .sendText(message.from, 'Welcome Venom 🕷')
+
+    if (message.isGroupMsg === false) {
+      client.sendText(message.from, 'Olá, pessoa. Esse é meu bot automático')
         .then((result: any) => {
           console.log('Result: ', result); //return object success
         })
@@ -28,5 +19,6 @@ function start(client: any) {
           console.error('Error when sending: ', erro); //return object error
         });
     }
+
   });
 }
