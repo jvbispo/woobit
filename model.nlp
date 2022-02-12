@@ -1,0 +1,565 @@
+{
+  "settings": {
+    "languages": [
+      "pt"
+    ],
+    "forceNER": true,
+    "tag": "nlp",
+    "threshold": 0.5,
+    "autoLoad": true,
+    "autoSave": true,
+    "modelFileName": "model.nlp",
+    "calculateSentiment": true
+  },
+  "nluManager": {
+    "settings": {
+      "tag": "nlu-manager"
+    },
+    "locales": [
+      "pt"
+    ],
+    "languageNames": {},
+    "domainManagers": {
+      "pt": {
+        "settings": {
+          "locale": "pt",
+          "trainByDomain": false,
+          "tag": "domain-manager-pt",
+          "nluByDomain": {
+            "default": {
+              "className": "NeuralNlu",
+              "settings": {}
+            }
+          },
+          "useStemDict": true
+        },
+        "stemDict": {
+          "tchau": {
+            "intent": "despedida",
+            "domain": "default"
+          },
+          "ate,mais": {
+            "intent": "despedida",
+            "domain": "default"
+          },
+          "depo,fal,nos": {
+            "intent": "despedida",
+            "domain": "default"
+          },
+          "ate,log": {
+            "intent": "despedida",
+            "domain": "default"
+          },
+          "ir,que,tenh": {
+            "intent": "despedida",
+            "domain": "default"
+          },
+          "ai,e": {
+            "intent": "saudacao",
+            "domain": "default"
+          },
+          "oi": {
+            "intent": "saudacao",
+            "domain": "default"
+          },
+          "ola": {
+            "intent": "saudacao",
+            "domain": "default"
+          },
+          "bom,dia": {
+            "intent": "saudacao",
+            "domain": "default"
+          },
+          "boa,tard": {
+            "intent": "saudacao",
+            "domain": "default"
+          },
+          "boa,noit": {
+            "intent": "saudacao",
+            "domain": "default"
+          },
+          "anos,quant,tem,voc": {
+            "intent": "idade",
+            "domain": "default"
+          },
+          "idad,qual,sua": {
+            "intent": "idade",
+            "domain": "default"
+          }
+        },
+        "intentDict": {
+          "despedida": "default",
+          "saudacao": "default",
+          "idade": "default"
+        },
+        "sentences": [
+          {
+            "domain": "default",
+            "utterance": "tchau",
+            "intent": "despedida"
+          },
+          {
+            "domain": "default",
+            "utterance": "até mais",
+            "intent": "despedida"
+          },
+          {
+            "domain": "default",
+            "utterance": "nos falamos depois",
+            "intent": "despedida"
+          },
+          {
+            "domain": "default",
+            "utterance": "até logo",
+            "intent": "despedida"
+          },
+          {
+            "domain": "default",
+            "utterance": "tenho que ir",
+            "intent": "despedida"
+          },
+          {
+            "domain": "default",
+            "utterance": "e ai?",
+            "intent": "saudacao"
+          },
+          {
+            "domain": "default",
+            "utterance": "oi",
+            "intent": "saudacao"
+          },
+          {
+            "domain": "default",
+            "utterance": "olá",
+            "intent": "saudacao"
+          },
+          {
+            "domain": "default",
+            "utterance": "bom dia",
+            "intent": "saudacao"
+          },
+          {
+            "domain": "default",
+            "utterance": "boa tarde",
+            "intent": "saudacao"
+          },
+          {
+            "domain": "default",
+            "utterance": "boa noite",
+            "intent": "saudacao"
+          },
+          {
+            "domain": "default",
+            "utterance": "quantos anos voce tem?",
+            "intent": "idade"
+          },
+          {
+            "domain": "default",
+            "utterance": "qual sua idade?",
+            "intent": "idade"
+          }
+        ],
+        "domains": {
+          "master_domain": {
+            "settings": {
+              "locale": "pt",
+              "tag": "nlu-pt",
+              "keepStopwords": true,
+              "nonefeatureValue": 1,
+              "nonedeltaMultiplier": 1.2,
+              "spellCheck": false,
+              "spellCheckDistance": 1,
+              "filterZeros": true,
+              "log": true
+            },
+            "features": {
+              "tchau": 1,
+              "ate": 1,
+              "mais": 1,
+              "nos": 1,
+              "fal": 1,
+              "depo": 1,
+              "log": 1,
+              "tenh": 1,
+              "que": 1,
+              "ir": 1,
+              "e": 1,
+              "ai": 1,
+              "oi": 1,
+              "ola": 1,
+              "bom": 1,
+              "dia": 1,
+              "boa": 1,
+              "tard": 1,
+              "noit": 1,
+              "quant": 1,
+              "anos": 1,
+              "voc": 1,
+              "tem": 1,
+              "qual": 1,
+              "sua": 1,
+              "idad": 1
+            },
+            "intents": {
+              "despedida": 1,
+              "saudacao": 1,
+              "idade": 1
+            },
+            "intentFeatures": {
+              "despedida": {
+                "tchau": 1,
+                "ate": 1,
+                "mais": 1,
+                "nos": 1,
+                "fal": 1,
+                "depo": 1,
+                "log": 1,
+                "tenh": 1,
+                "que": 1,
+                "ir": 1
+              },
+              "saudacao": {
+                "e": 1,
+                "ai": 1,
+                "oi": 1,
+                "ola": 1,
+                "bom": 1,
+                "dia": 1,
+                "boa": 1,
+                "tard": 1,
+                "noit": 1
+              },
+              "idade": {
+                "quant": 1,
+                "anos": 1,
+                "voc": 1,
+                "tem": 1,
+                "qual": 1,
+                "sua": 1,
+                "idad": 1
+              }
+            },
+            "featuresToIntent": {
+              "tchau": [
+                "despedida"
+              ],
+              "ate": [
+                "despedida"
+              ],
+              "mais": [
+                "despedida"
+              ],
+              "nos": [
+                "despedida"
+              ],
+              "fal": [
+                "despedida"
+              ],
+              "depo": [
+                "despedida"
+              ],
+              "log": [
+                "despedida"
+              ],
+              "tenh": [
+                "despedida"
+              ],
+              "que": [
+                "despedida"
+              ],
+              "ir": [
+                "despedida"
+              ],
+              "e": [
+                "saudacao"
+              ],
+              "ai": [
+                "saudacao"
+              ],
+              "oi": [
+                "saudacao"
+              ],
+              "ola": [
+                "saudacao"
+              ],
+              "bom": [
+                "saudacao"
+              ],
+              "dia": [
+                "saudacao"
+              ],
+              "boa": [
+                "saudacao"
+              ],
+              "tard": [
+                "saudacao"
+              ],
+              "noit": [
+                "saudacao"
+              ],
+              "quant": [
+                "idade"
+              ],
+              "anos": [
+                "idade"
+              ],
+              "voc": [
+                "idade"
+              ],
+              "tem": [
+                "idade"
+              ],
+              "qual": [
+                "idade"
+              ],
+              "sua": [
+                "idade"
+              ],
+              "idad": [
+                "idade"
+              ]
+            },
+            "neuralNetwork": {
+              "settings": {
+                "locale": "pt",
+                "tag": "nlu-pt",
+                "keepStopwords": true,
+                "nonefeatureValue": 1,
+                "nonedeltaMultiplier": 1.2,
+                "spellCheck": false,
+                "spellCheckDistance": 1,
+                "filterZeros": true,
+                "log": true
+              },
+              "features": [
+                "tchau",
+                "ate",
+                "mais",
+                "nos",
+                "fal",
+                "depo",
+                "log",
+                "tenh",
+                "que",
+                "ir",
+                "e",
+                "ai",
+                "oi",
+                "ola",
+                "bom",
+                "dia",
+                "boa",
+                "tard",
+                "noit",
+                "quant",
+                "anos",
+                "voc",
+                "tem",
+                "qual",
+                "sua",
+                "idad"
+              ],
+              "intents": [
+                "despedida",
+                "saudacao",
+                "idade"
+              ],
+              "perceptrons": [
+                [
+                  10.065688133239746,
+                  6.932450771331787,
+                  3.4813385009765625,
+                  3.466252088546753,
+                  3.466252088546753,
+                  3.466252088546753,
+                  3.4515786170959473,
+                  3.465920925140381,
+                  3.465920925140381,
+                  3.465920925140381,
+                  -1.943977952003479,
+                  -1.943977952003479,
+                  -3.7484729290008545,
+                  -3.7257347106933594,
+                  -1.9319703578948975,
+                  -1.9319703578948975,
+                  -2.5792346000671387,
+                  -1.2951247692108154,
+                  -1.2836211919784546,
+                  -0.9688517451286316,
+                  -0.9688517451286316,
+                  -0.9688517451286316,
+                  -0.9688517451286316,
+                  -1.2895060777664185,
+                  -1.2895060777664185,
+                  -1.2895060777664185,
+                  3.8728167712158137
+                ],
+                [
+                  -5.8028483390808105,
+                  -4.058687686920166,
+                  -2.0453271865844727,
+                  -2.027360439300537,
+                  -2.027360439300537,
+                  -2.027360439300537,
+                  -2.0124974250793457,
+                  -2.0267772674560547,
+                  -2.0267772674560547,
+                  -2.0267772674560547,
+                  4.1081647872924805,
+                  4.1081647872924805,
+                  8.035897254943848,
+                  7.9975409507751465,
+                  4.093262195587158,
+                  4.093262195587158,
+                  5.457063674926758,
+                  2.736560583114624,
+                  2.72094464302063,
+                  -1.5324894189834595,
+                  -1.5324894189834595,
+                  -1.5324894189834595,
+                  -1.5324894189834595,
+                  -2.033550500869751,
+                  -2.033550500869751,
+                  -2.033550500869751,
+                  6.101248101130624
+                ],
+                [
+                  -0.8682286739349365,
+                  -0.8496374487876892,
+                  -0.4327574670314789,
+                  -0.431501567363739,
+                  -0.431501567363739,
+                  -0.431501567363739,
+                  -0.37533918023109436,
+                  -0.4133046567440033,
+                  -0.4133046567440033,
+                  -0.4133046567440033,
+                  -0.5291105508804321,
+                  -0.5291105508804321,
+                  -0.848735511302948,
+                  -0.8455309271812439,
+                  -0.49930790066719055,
+                  -0.49930790066719055,
+                  -0.7290878295898438,
+                  -0.3656056225299835,
+                  -0.3402584493160248,
+                  3.3588802814483643,
+                  3.3588802814483643,
+                  3.3588802814483643,
+                  3.3588802814483643,
+                  4.4783735275268555,
+                  4.4783735275268555,
+                  4.4783735275268555,
+                  0.8498646272109136
+                ]
+              ]
+            }
+          }
+        }
+      }
+    },
+    "intentDomains": {},
+    "extraSentences": [
+      [
+        "pt",
+        "tchau"
+      ],
+      [
+        "pt",
+        "até mais"
+      ],
+      [
+        "pt",
+        "nos falamos depois"
+      ],
+      [
+        "pt",
+        "até logo"
+      ],
+      [
+        "pt",
+        "tenho que ir"
+      ],
+      [
+        "pt",
+        "e ai?"
+      ],
+      [
+        "pt",
+        "oi"
+      ],
+      [
+        "pt",
+        "olá"
+      ],
+      [
+        "pt",
+        "bom dia"
+      ],
+      [
+        "pt",
+        "boa tarde"
+      ],
+      [
+        "pt",
+        "boa noite"
+      ],
+      [
+        "pt",
+        "quantos anos voce tem?"
+      ],
+      [
+        "pt",
+        "qual sua idade?"
+      ]
+    ]
+  },
+  "ner": {
+    "settings": {
+      "tag": "ner",
+      "entityPreffix": "%",
+      "entitySuffix": "%"
+    },
+    "rules": {}
+  },
+  "nlgManager": {
+    "settings": {
+      "tag": "nlg-manager"
+    },
+    "responses": {
+      "pt": {
+        "despedida": [
+          {
+            "answer": "Até mais!"
+          },
+          {
+            "answer": "Tchau, até mais!"
+          },
+          {
+            "answer": "Tchau, até logo!"
+          }
+        ],
+        "saudacao": [
+          {
+            "answer": "Olá!"
+          },
+          {
+            "answer": "Oi!"
+          }
+        ],
+        "idade": [
+          {
+            "answer": "Não tenho certeza, porem sou um bot jovem =D"
+          }
+        ]
+      }
+    }
+  },
+  "actionManager": {
+    "settings": {
+      "tag": "action-manager"
+    },
+    "actions": {}
+  },
+  "slotManager": {}
+}

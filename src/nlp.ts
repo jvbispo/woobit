@@ -1,15 +1,15 @@
 const { NlpManager } = require('node-nlp');
 export const manager = new NlpManager({ languages: ['pt'], forceNER: true });
 
-// Treinamento de saudações
+// Treinamento de despedida
 manager.addDocument('pt', 'tchau', 'despedida');
 manager.addDocument('pt', 'até mais', 'despedida');
-manager.addDocument('pt', 'e ai, tudo bem?', 'despedida');
 manager.addDocument('pt', 'nos falamos depois', 'despedida');
 manager.addDocument('pt', 'até logo', 'despedida');
 manager.addDocument('pt', 'tenho que ir', 'despedida');
 
-// Treinamento de despedida
+// Treinamento de saudacao
+manager.addDocument('pt', 'e ai?', 'saudacao');
 manager.addDocument('pt', 'oi', 'saudacao');
 manager.addDocument('pt', 'olá', 'saudacao');
 manager.addDocument('pt', 'bom dia', 'saudacao');

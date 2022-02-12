@@ -13,8 +13,8 @@ export const startVenom = async (client: Whatsapp) => {
   client.onMessage(async (message: IMessage ) => {
 
     if (message.isGroupMsg === false) {
-      const botResponse = await manager.process('pt', message.body);
-      client.sendText(message.from, botResponse)
+      const botResponse = await manager.process('pt', message.body.toLowerCase());
+      client.sendText(message.from, botResponse.answer)
         .then((result: any) => {
           console.log('Result: ', result); //return object success
         })
