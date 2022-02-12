@@ -9,12 +9,9 @@ const port = 3000;
 create({
     session: 'bot', 
     multidevice: false
-  })
-  .then((client: any) => startVenom(client))
-  .catch((erro: Error) => {
+}).then((client: any) => startVenom(client)).catch((erro: Error) => {
     console.log(erro);
   });
-
 
 server.listen(port, () => {
     console.log(`server running on port ${ port }`)

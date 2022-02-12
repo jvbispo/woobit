@@ -1,4 +1,6 @@
-import { create, Whatsapp} from "venom-bot";
+import { Whatsapp } from "venom-bot";
+import { manager } from "./nlp";
+
 
 interface IMessage {
     isGroupMsg: boolean;
@@ -6,12 +8,13 @@ interface IMessage {
     from: string;
 }
 
-export function startVenom(client: Whatsapp) {
+export const startVenom = async (client: Whatsapp) => {
 
-  client.onMessage((message: IMessage ) => {
+  client.onMessage(async (message: IMessage ) => {
 
     if (message.isGroupMsg === false) {
-      client.sendText(message.from, 'Olá, pessoa. Esse é meu bot automático')
+      const botResponse = await manager.process('pt', message.body);
+      client.sendText(message.from, botResponse)
         .then((result: any) => {
           console.log('Result: ', result); //return object success
         })
